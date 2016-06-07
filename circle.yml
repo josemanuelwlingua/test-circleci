@@ -30,5 +30,8 @@ database:
 test:
   override:
     - mkdir -p $CIRCLE_TEST_REPORTS/intern
-    - ./node_modules/.bin/intern-runner config=tests/intern functionalSuites=tests/functional/*
+    - case CIRCLE_BRANCH in
+         master)
+            ./node_modules/.bin/intern-runner config=tests/intern functionalSuites=tests/functional/*
+      esac
     - cp ./report.xml $CIRCLE_TEST_REPORTS/intern

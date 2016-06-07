@@ -36,6 +36,13 @@ define({
 	// See <https://theintern.github.io/intern/#option-tunnel> for built-in options
 	tunnel: 'NullTunnel',
 
+	//tunnel: 'BrowserStackTunnel',
+
+	/*tunnelOptions: {
+		username: 'krhdf1',
+		accessKey: 'K7DDzQ2snUyxiydb84S8'
+	},*/
+
 	// Configuration options for the module loader; any AMD configuration options supported by the AMD loader in use
 	// can be used here.
 	// If you want to use a different loader than the default loader, see
