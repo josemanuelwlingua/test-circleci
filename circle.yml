@@ -1,0 +1,24 @@
+## Customize the test machine
+machine:
+
+  timezone:
+    Europe/Madrid # Set the timezone
+
+  php:
+      version: 5.4.42
+
+## Customize checkout
+checkout:
+  post:
+    - git submodule sync
+    - git submodule update --init # use submodules
+
+## Customize dependencies
+dependencies:
+  pre:
+    - bower install dojo/dojo dojo/dijit dojo/dojox dojo/util
+
+## Customize database setup
+database:
+  override:
+    - mysql -u ubuntu wlingua < db.sql
