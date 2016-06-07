@@ -65,10 +65,13 @@ define({
 	// to completely disable code coverage.
 	excludeInstrumentation: /^(?:tests|node_modules)\//,
 
-	leaveRemoteOpen: false
+	leaveRemoteOpen: false,
+
+	reporters: [
+		{ id: 'JUnit', filename: 'report.xml' }
+	]
 
 	// Commands
-	// ./node_modules/.bin/intern-runner config=tests/intern suites=tests/functional
-	// ./node_modules/.bin/intern-runner config=tests/intern functionalSuites=tests/functional/hello
+	// ./node_modules/.bin/intern-runner config=tests/intern functionalSuites=tests/functional/*
 
 });
