@@ -2,7 +2,7 @@
 
 LOAD_REPORT=0
 
-git log --format=%B -n 1 476681c2d3eafe86d9569abd881e35d345115d47 >> git-description.txt
+git log --format=%B -n 1 $CIRCLE_SHA1 >> git-description.txt
 grep ^TESTS: git-description.txt>> tests.txt
 
 result_string=$(cat tests.txt)
@@ -14,9 +14,15 @@ result_string="${result_string/TESTS:/}"
 
 tests=$(echo $result_string | tr ";" "\n")
 
+test_string=""
+
 for test in $tests
 do
-    #mkdir -p $CIRCLE_TEST_REPORTS/intern
-    ./node_modules/.bin/intern-runner config=tests/intern functionalSuites=tests/functional/$test
-    #cp ./report.xml $CIRCLE_TEST_REPORTS/intern
+    test_string="$test_string functionalSuites=tests/functional/$test"
 done
+
+if [[ $test_string != "" ]]; then
+    ./node_modules/.bin/intern-runner config=tests/intern $test_string
+    mkdir -p $CIRCLE_TEST_REPORTS/intern
+    cp ./report.xml $CIRCLE_TEST_REPORTS/intern
+fi
