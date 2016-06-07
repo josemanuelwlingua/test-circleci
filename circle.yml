@@ -21,4 +21,4 @@ dependencies:
 ## Customize database setup
 database:
   override:
-    - mysql -u ubuntu wlingua < db.sql
+    - mysql -u ubuntu circle_test < db.sql
