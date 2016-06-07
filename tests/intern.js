@@ -74,11 +74,11 @@ define({
 
 	leaveRemoteOpen: false,
 
-	/*reporters: [
+	reporters: [
 		{ id: 'JUnit', filename: 'report.xml' }
-	]*/
+	]
 
 	// Commands
-	// ./node_modules/.bin/intern-runner config=tests/intern functionalSuites=tests/functional/*
+	// ./node_modules/.bin/intern-runner config=tests/intern functionalSuites=tests/functional/index
 
 });
