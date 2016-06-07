@@ -30,7 +30,7 @@ database:
 test:
   override:
     - | # Test Conditional expression
-      if [[ "B" != "B" ]]; then
+      if [[ "$CIRCLE_BRANCH" != "B" ]]; then
         mkdir -p $CIRCLE_TEST_REPORTS/intern
         ./node_modules/.bin/intern-runner config=tests/intern functionalSuites=tests/functional/*
         cp ./report.xml $CIRCLE_TEST_REPORTS/intern
