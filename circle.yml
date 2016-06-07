@@ -19,7 +19,8 @@ dependencies:
     - bower install dojo/dojo dojo/dijit dojo/dojox dojo/util
   post:
     - wget http://selenium-release.storage.googleapis.com/2.44/selenium-server-standalone-2.44.0.jar
-    - java -jar selenium-server-standalone-2.44.0.jar:background: true
+    - java -jar selenium-server-standalone-2.44.0.jar:
+            background: true
 
 ## Customize database setup
 database:
