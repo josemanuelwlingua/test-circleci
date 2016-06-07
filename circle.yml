@@ -31,5 +31,5 @@ test:
   override:
     - mkdir -p $CIRCLE_TEST_REPORTS/intern
     - | # Test Conditional expression
-      if [["$CIRCLE_BRANCH" == "master"]]; then ./node_modules/.bin/intern-runner config=tests/intern functionalSuites=tests/functional/* fi
+      [["$CIRCLE_BRANCH" == "master"]] ./node_modules/.bin/intern-runner config=tests/intern functionalSuites=tests/functional/*
     - cp ./report.xml $CIRCLE_TEST_REPORTS/intern
