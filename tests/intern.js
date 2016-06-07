@@ -64,9 +64,9 @@ define({
 	],*/
 
 	// Functional test suite(s) to execute against each browser once unit tests are completed
-	functionalSuites: [
+	/*functionalSuites: [
 		'tests/functional/index'
-	],
+	],*/
 
 	// A regular expression matching URLs to files that should not be included in code coverage analysis. Set to `true`
 	// to completely disable code coverage.
@@ -74,9 +74,9 @@ define({
 
 	leaveRemoteOpen: false,
 
-	reporters: [
+	/*reporters: [
 		{ id: 'JUnit', filename: 'report.xml' }
-	]
+	]*/
 
 	// Commands
 	// ./node_modules/.bin/intern-runner config=tests/intern functionalSuites=tests/functional/*
