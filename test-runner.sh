@@ -2,13 +2,14 @@
 
 LOAD_REPORT=0
 
-git log --format=%B -n 1 $CIRCLE_SHA1 >> git-description.txt
+git log --format=%B -n 1 a8a00882028eb74b2b22c9539882c95bd67263b0 >> git-description.txt
 grep ^TESTS: git-description.txt>> tests.txt
 
 result_string=$(cat tests.txt)
 
 rm git-description.txt
 rm tests.txt
+rm -r $CIRCLE_TEST_REPORTS/intern
 
 result_string="${result_string/TESTS:/}"
 
