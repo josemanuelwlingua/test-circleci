@@ -23,7 +23,7 @@ done
 
 if [[ $test_string != "" ]]; then
 
-    ./node_modules/.bin/intern-runner config=tests/intern reporters=Console $test_string &&
+    ./node_modules/.bin/intern-runner config=tests/intern $test_string &&
     mkdir -p $CIRCLE_TEST_REPORTS/intern &&
     cp ./report.xml $CIRCLE_TEST_REPORTS/intern
 

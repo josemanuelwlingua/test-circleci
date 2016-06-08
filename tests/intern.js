@@ -75,7 +75,8 @@ define({
 	leaveRemoteOpen: false,
 
 	reporters: [
-		{ id: 'JUnit', filename: 'report.xml' }
+		{ id: 'JUnit', filename: 'report.xml' },
+		{ id: 'Console'}
 	]
 
 	// Commands
