@@ -25,7 +25,7 @@ if [[ $test_string != "" ]]; then
 
     #Simula try/catch
     set +e
-    bash -e <<TRY
+    bash -e << TRY
 
         ./node_modules/.bin/intern-runner config=tests/intern $test_string
         mkdir -p $CIRCLE_TEST_REPORTS/intern
