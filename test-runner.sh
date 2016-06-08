@@ -27,4 +27,6 @@ if [[ $test_string != "" ]]; then
     mkdir -p $CIRCLE_TEST_REPORTS/intern &&
     cp ./report.xml $CIRCLE_TEST_REPORTS/intern
 
+    #t
+
 fi
