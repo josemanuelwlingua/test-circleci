@@ -17,7 +17,7 @@ checkout:
 dependencies:
   pre:
     - bower install dojo/dojo dojo/dijit dojo/dojox dojo/util
-    - mysql -u ubuntu -e "wcm"
+    - mysql -u ubuntu -e "create database wcm;"
     - mysql -u ubuntu -e "grant all on wcm.* to 'root';"
   post:
     - wget http://selenium-release.storage.googleapis.com/2.44/selenium-server-standalone-2.44.0.jar
