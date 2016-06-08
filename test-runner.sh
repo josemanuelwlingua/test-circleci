@@ -23,17 +23,8 @@ done
 
 if [[ $test_string != "" ]]; then
 
-    #Simula try/catch
-    set +e
-    bash -e << TRY
-
-        ./node_modules/.bin/intern-runner config=tests/intern $test_string
-        mkdir -p $CIRCLE_TEST_REPORTS/intern
-        cp ./report.xml $CIRCLE_TEST_REPORTS/intern
-
-    TRY
-    if [ $? -ne 0 ]; then
-      #echo caught exception
-    fi
+    ./node_modules/.bin/intern-runner config=tests/intern $test_string &&
+    mkdir -p $CIRCLE_TEST_REPORTS/intern &&
+    cp ./report.xml $CIRCLE_TEST_REPORTS/intern
 
 fi
